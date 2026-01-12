@@ -1,0 +1,78 @@
+# ===========================================
+# MLOps Breast Cancer Project - Configuration
+# ===========================================
+
+# Project Information
+project:
+  name: "mlops-breast-cancer"
+  version: "1.0.0"
+  description: "MLOps pipeline for breast cancer classification"
+
+# Data Configuration
+data:
+  test_size: 0.2
+  random_state: 42
+  scale_features: true
+
+# Model Configuration
+model:
+  type: "random_forest"
+  
+  random_forest:
+    n_estimators: 100
+    max_depth: 10
+    min_samples_split: 2
+    min_samples_leaf: 1
+    random_state: 42
+  
+  svm:
+    C: 1.0
+    kernel: "rbf"
+    gamma: "scale"
+    random_state: 42
+  
+  logistic_regression:
+    C: 1.0
+    max_iter: 1000
+    random_state: 42
+
+# Training Configuration
+training:
+  cv_folds: 5
+
+# MLflow Configuration
+mlflow:
+  tracking_uri: "mlruns"
+  experiment_name: "breast-cancer-classification"
+
+# Optuna Configuration
+optuna:
+  n_trials: 10
+  timeout: 300
+  
+  random_forest_space:
+    n_estimators:
+      low: 50
+      high: 200
+    max_depth:
+      low: 5
+      high: 30
+    min_samples_split:
+      low: 2
+      high: 10
+    min_samples_leaf:
+      low: 1
+      high: 5
+
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  model_path: "models/model.joblib"
+
+# Paths
+paths:
+  data_dir: "data"
+  models_dir: "models"
+  logs_dir: "logs"
+  artifacts_dir: "artifacts"
