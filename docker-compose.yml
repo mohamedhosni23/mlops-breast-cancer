@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  # Training service
+  train:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./models:/app/models
+      - ./artifacts:/app/artifacts
+      - ./mlruns:/app/mlruns
+      - ./data:/app/data
+    command: python src/train.py
+
+  # API service
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+    environment:
+      - MODEL_PATH=/app/models/model.joblib
+    restart: unless-stopped
+
+  # MLflow UI service
+  mlflow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/app/mlruns
+    command: mlflow ui --host 0.0.0.0 --port 5000
