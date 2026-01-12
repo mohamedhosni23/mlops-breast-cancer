@@ -1,0 +1,17 @@
+{
+  "current": "v1",
+  "history": [
+    {
+      "version": "v1",
+      "path": "models/versions/model_v1.joblib",
+      "description": "Baseline Random Forest model",
+      "created_at": "2026-01-13T00:42:42.742535"
+    },
+    {
+      "version": "v2",
+      "path": "models/versions/model_v2.joblib",
+      "description": "Optuna optimized model",
+      "created_at": "2026-01-13T00:42:42.767092"
+    }
+  ]
+}
