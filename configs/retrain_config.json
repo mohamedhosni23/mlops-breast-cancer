@@ -1,0 +1,7 @@
+{
+    "min_accuracy_threshold": 0.90,
+    "min_f1_threshold": 0.90,
+    "retrain_interval_hours": 24,
+    "auto_deploy": true,
+    "max_retrain_per_day": 3
+}

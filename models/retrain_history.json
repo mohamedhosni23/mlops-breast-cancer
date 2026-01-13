@@ -1,0 +1,16 @@
+{
+  "retrains": [
+    {
+      "timestamp": "2026-01-13T00:59:50.281956",
+      "reason": "manual",
+      "metrics": {
+        "accuracy": 0.956140350877193,
+        "f1_score": 0.9655172413793104,
+        "roc_auc": 0.9938822751322751
+      },
+      "deployed": true,
+      "model_path": "models/model_retrain_20260113_005947.joblib"
+    }
+  ],
+  "last_retrain": "2026-01-13T00:59:50.281969"
+}
