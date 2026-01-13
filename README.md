@@ -7,12 +7,12 @@ A complete MLOps pipeline for breast cancer classification using the UCI Breast 
 | Component | Tool | Status |
 |-----------|------|--------|
 | Code Management | Git/GitHub | ✅ |
-| Containerization | Docker | 🔄 |
-| Data Versioning | DVC | 🔄 |
+| Containerization | Docker | ✅ |
+| Data Versioning | DVC | ✅ |
 | Experiment Tracking | MLflow | ✅ |
-| ML Pipeline | ZenML | 🔄 |
-| Hyperparameter Tuning | Optuna | 🔄 |
-| API Deployment | FastAPI | 🔄 |
+| ML Pipeline | ZenML | ✅ |
+| Hyperparameter Tuning | Optuna | ✅ |
+| API Deployment | FastAPI | ✅ |
 
 ## 🚀 Quick Start
 ```bash
