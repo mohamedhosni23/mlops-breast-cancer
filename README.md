@@ -79,3 +79,41 @@ uvicorn api.main:app --host 0.0.0.0 --port 8000
 # Open in browser
 http://localhost:8000/dashboard
 ```
+
+## 🔄 Automatic Retraining (Bonus)
+
+The project includes automatic model retraining capabilities.
+
+### Commands
+```bash
+# Manual retrain
+python src/retrain.py retrain
+
+# Check if retrain is needed
+python src/retrain.py check
+
+# View retrain history
+python src/retrain.py history
+
+# Start scheduled retraining (every 60 minutes)
+python src/retrain.py schedule --interval 60
+```
+
+### Configuration
+
+Edit `configs/retrain_config.json`:
+```json
+{
+    "min_accuracy_threshold": 0.90,
+    "min_f1_threshold": 0.90,
+    "retrain_interval_hours": 24,
+    "auto_deploy": true,
+    "max_retrain_per_day": 3
+}
+```
+
+### Retrain Triggers
+
+- **Scheduled**: Runs at configured interval
+- **Performance**: When metrics drop below threshold
+- **Manual**: On-demand retraining
